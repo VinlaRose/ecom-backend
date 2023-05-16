@@ -8,6 +8,8 @@ import { Explore } from "./pages/exploreAll/explore";
 import { Favourites } from "./pages/favourites/favourites";
 import { Profile } from "./pages/profile/profile";
 import MockAPI from "./MockAPI";
+import { GettingDataCheck } from "./pages/getdata";
+import { ProductDetails } from "./components/productDetailsCard/ProductDetails";
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
       <Route path="/fav" element={<Favourites/>} />
       <Route path="/profile" element={<Profile/>} />
       <Route path="/mockapi" element={<MockAPI/>} />
+      <Route path="/trial" element={<GettingDataCheck/>} />
+      <Route path="/productDetailCard" element={<ProductDetails/>} />
      </Routes>
 
     </div>
