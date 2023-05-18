@@ -40,12 +40,7 @@ export const Explore = () => {
                     <div className="filters">
                         <Filters/>
                     </div>
-                 
-     
-    
-                    
 
-     
                 </div>
 
 

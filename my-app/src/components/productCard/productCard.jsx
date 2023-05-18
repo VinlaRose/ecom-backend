@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom"
 import "./productCard.css"
-export const ProductCard = ({name, price, image, category}) => {
+
+export const ProductCard = ({name, price, image, category, item_id}) => {
 
   
 return (
     <div className="productCardContainer">
         <div className="imageContainerProductCard">
-            <img src={image} alt=""/>
+        <Link to={`/product/${item_id}`}><img src={image} alt=""/></Link>
             <div className="imageOverlay">
-          <p className="imageText">View Product</p>
+          <Link to={`/product/${item_id}`}> <p className="imageText">View details</p> </Link>
         </div>
         </div>
         <div className="productDetails">

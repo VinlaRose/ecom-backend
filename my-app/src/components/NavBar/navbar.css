@@ -28,6 +28,7 @@ nav {
     
     height: 80px;
     margin-left: 50px;
+    margin-right: 50px;
   }
   
   .navbar-middle{
@@ -72,6 +73,10 @@ nav {
     .navbar-right {
       margin-bottom: 10px;
     }
+
+   .navbar-middle{
+    width: 200px;
+   }
     
     .navbar-middle input[type="text"] {
       width: 100%;

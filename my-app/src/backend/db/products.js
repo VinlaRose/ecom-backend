@@ -134,19 +134,7 @@ export const products = [
     "short_description": "Side table,          66x32 cm",
     "image": "https://images.unsplash.com/photo-1577140917170-285929fb55b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
   },
-  {
-    "0": 1763,
-    "item_id": 59252637,
-    "name": "STUVA / FRITIDS",
-    "category": "Children's furniture",
-    "price": 395,
-    "inFav": "FALSE",
-    "inCart": "FALSE",
-    "sellable_online": "TRUE",
-    "other_colors": "Yes",
-    "short_description": "Bench with toy storage,          90x50x50 cm",
-    "image": "https://images.unsplash.com/photo-1603072387865-e48a022fc541?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHMlMjBiZWR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=66"
-  },
+ 
   {
     "0": 1981,
     "item_id": 70208539,
@@ -472,19 +460,7 @@ export const products = [
     "short_description": "Shelf,          83x30 cm",
     "image": "https://plus.unsplash.com/premium_photo-1677456382584-a29513071920?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=89"
   },
-  {
-    "0": 1882,
-    "item_id": 39252756,
-    "name": "STUVA / FRITIDS",
-    "category": "Nursery furniture",
-    "price": 425,
-    "inFav": "FALSE",
-    "inCart": "FALSE",
-    "sellable_online": "TRUE",
-    "other_colors": "Yes",
-    "short_description": "Wardrobe,          60x50x128 cm",
-    "image": "https://images.unsplash.com/photo-1617791169544-1ba998b069e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=603&q=84"
-  },
+  
   {
     "0": 840,
     "item_id": 10409871,
@@ -537,19 +513,7 @@ export const products = [
     "short_description": "Gateleg table, outdoor,          20/77/133x62 cm",
     "image": "https://images.unsplash.com/photo-1590361232060-61b9a025a068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8b3V0ZG9vciUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=68"
   },
-  {
-    "0": 1880,
-    "item_id": 19275075,
-    "name": "STUVA / FRITIDS",
-    "category": "Nursery furniture",
-    "price": 1545,
-    "inFav": "FALSE",
-    "inCart": "FALSE",
-    "sellable_online": "TRUE",
-    "other_colors": "Yes",
-    "short_description": "Wardrobe,          120x50x192 cm",
-    "image": "https://images.unsplash.com/photo-1617791169544-1ba998b069e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=603&q=82"
-  },
+  
   {
     "0": 277,
     "item_id": 39318031,

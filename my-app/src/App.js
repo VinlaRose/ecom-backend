@@ -10,6 +10,7 @@ import { Profile } from "./pages/profile/profile";
 import MockAPI from "./MockAPI";
 import { GettingDataCheck } from "./pages/getdata";
 import { ProductDetails } from "./components/productDetailsCard/ProductDetails";
+import { DetailsPage } from "./pages/DetailsPage/DetailsPage";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Route path="/mockapi" element={<MockAPI/>} />
       <Route path="/trial" element={<GettingDataCheck/>} />
       <Route path="/productDetailCard" element={<ProductDetails/>} />
+      <Route path="/product/:productId" element={<DetailsPage/>} />
      </Routes>
 
     </div>
