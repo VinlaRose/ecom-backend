@@ -11,6 +11,7 @@ import MockAPI from "./MockAPI";
 import { GettingDataCheck } from "./pages/getdata";
 import { ProductDetails } from "./components/productDetailsCard/ProductDetails";
 import { DetailsPage } from "./pages/DetailsPage/DetailsPage";
+import { TrialPage } from "./trialPage";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route path="/trial" element={<GettingDataCheck/>} />
       <Route path="/productDetailCard" element={<ProductDetails/>} />
       <Route path="/product/:productId" element={<DetailsPage/>} />
+      <Route path = "trialpage" element={<TrialPage/>}/>
      </Routes>
 
     </div>

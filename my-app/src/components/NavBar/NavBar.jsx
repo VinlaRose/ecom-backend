@@ -1,6 +1,8 @@
 import "./navbar.css";
 // import PersonIcon from '@mui/icons-material/Person';
 import logofurnish from "../../images/logofurnish.PNG";
+import { useContext, useReducer } from "react";
+import { DataContext } from "../../context/DataContext";
 
 
 
@@ -8,6 +10,12 @@ import logofurnish from "../../images/logofurnish.PNG";
 
 
 export const NavBar = () => {
+  const {state, dispatch} = useContext(DataContext);
+  const handleSearchTermChange = event => {
+    const searchTerm = event.target.value;
+    dispatch({ type: "SEARCH", payload: searchTerm });
+    
+  };
     return (
         <div className="navbarContainer">
           <nav>
@@ -17,7 +25,8 @@ export const NavBar = () => {
 
 
       <div className="navbar-middle">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" value={state.searchTerm}
+        onChange={handleSearchTermChange} />
         <span type="submit" class="material-symbols-outlined">
           search
         </span>

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./categoryReel.css";
 import  { categories } from "../../backend/db/categories";
+import { DataContext } from "../../context/DataContext";
 
 const CategoryReel = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -17,6 +18,8 @@ const CategoryReel = () => {
   const showLeftArrow = scrollPosition < 0;
   const showRightArrow = scrollPosition  <= 100 && scrollPosition  > -90 ;
 
+  const {state, dispatch} = useContext(DataContext)
+
   return (
 
     <div className="main">
@@ -29,7 +32,7 @@ const CategoryReel = () => {
       <div className="reelContainer">
         <div className="reel" style={{ transform: `translateX(${scrollPosition}%)` }}>
           {categories.map(({id, categoryName, image}) => (
-            <div className="category" key={id}>
+            <div className="category" key={id} >
               <img src={image} alt=" " />
               <p>{categoryName}</p>
             </div>

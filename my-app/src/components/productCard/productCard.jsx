@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import "./productCard.css"
 
-export const ProductCard = ({name, price, image, category, item_id}) => {
+export const ProductCard = ({name, price, image, category, item_id, inStock, fastDelivery}) => {
 
   
 return (
@@ -16,6 +16,9 @@ return (
         <p className="productName">{name}</p>
         <p className="productType">{category}</p>
         <p className="productPrice"> <span>Rs.</span> {price}</p>
+        {inStock === false && "Out of stock"}
+        <br/>
+        {fastDelivery  && "Fast delivery available"}
 
         </div>
        
