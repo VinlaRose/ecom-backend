@@ -1,0 +1,44 @@
+.login-container {
+    
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    
+  }
+  
+  .login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"] {
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .login-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-buttons button {
+    margin-right: 10px;
+  }
+  
+  .login-buttons p {
+    margin-top: 20px;
+  }
+  

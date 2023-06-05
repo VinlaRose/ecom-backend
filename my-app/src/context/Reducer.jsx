@@ -6,11 +6,15 @@ const initialState = {
     products: [],
     filteredProducts: [],
     categories: [],
+    cart: [],
+    wishlist: [],
     sortOption: '',
     rating: '',  
     isChecked: false,
     selectedCategories: [],
-    searchTerm: ""
+    searchTerm: "",
+    cartLength : 0,
+    address: []
 }
 
 const sorter = (data, sortBy) => {
@@ -56,8 +60,29 @@ export const reducer = (state, action) => {
             ...state,
           products: action.payload.products,
           categories: action.payload.categories,
-          filteredProducts: action.payload.products
+          filteredProducts: action.payload.products,
+          
         };
+
+      case 'FETCH_CART':
+        return{
+          ...state,
+          cart: action.payload.cart,
+         
+        };
+
+      case 'FETCH_WISHLIST':
+        return{
+          ...state,
+          wishlist: action.payload.wishlist
+        };
+        case 'FETCH_ADDRESS':
+        return{
+          ...state,
+          address: action.payload.address
+        };
+      
+        
     case 'SORT':
         return {
           ...state,

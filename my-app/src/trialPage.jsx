@@ -5,6 +5,7 @@ import { useEffect, useReducer } from "react";
 const initialState = {
     products: [],
     filteredProducts: [],
+    cartProducts: [],
     categories: [],
     sortOption: '',
     rating: '',  

@@ -12,11 +12,11 @@ import { Filters } from "../../components/filters/Filter";
 
 export const Explore = () => {
     const {state} = useContext(DataContext);
-    const { filteredProducts, sortOption, isChecked, rating, selectedCategories, categories } = state;
+    const { filteredProducts} = state;
 
     const[showFilter, setShowFilter] = useState(false)
 
-    console.log(state, "state from explore")
+    
    
    
     return(
@@ -41,10 +41,8 @@ export const Explore = () => {
 
                 <div className="exploreLeft">
                     <div className="filters">
-                        <Filters/>
-                        
+                        <Filters/>    
                     </div>
-
                 </div>
 
 
@@ -52,8 +50,8 @@ export const Explore = () => {
                 <div className="exploreRight">
                 <ul>
         {
-          filteredProducts.map(({item_id, name, image, category, price, inStock, fastDelivery}) => (<li key={item_id}>
-            <ProductCard item_id={item_id} name={name} image={image} category={category} price={price} inStock={inStock} fastDelivery={fastDelivery}/>
+          filteredProducts.map(({item_id, name, image, category, price, inStock, fastDelivery, inFav}) => (<li key={item_id}>
+            <ProductCard item_id={item_id} name={name} image={image} category={category} price={price} inStock={inStock} fastDelivery={fastDelivery} inFav={inFav} showDetailsPage={true}/>
           </li >))
         }
         </ul>

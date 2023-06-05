@@ -34,7 +34,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     "0": 1128,
-    "item_id": 20339420,
+    item_id: 20339420,
     "name": "RENBERGET",
     "category": "Chairs",
     "price": 175,
@@ -48,7 +48,7 @@ export const products = [
   },
   {
     "0": 2680,
-    "item_id": 70239710,
+    item_id: 70239710,
     "name": "STOCKHOLM",
     "category": "Tables & desks",
     "price": 995,
@@ -62,7 +62,7 @@ export const products = [
   },
   {
     "0": 2683,
-    "item_id": 99014376,
+    item_id: 99014376,
     "name": "MELLTORP / ADDE",
     "category": "Tables & desks",
     "price": 359,
@@ -76,7 +76,7 @@ export const products = [
   },
   {
     "0": 1625,
-    "item_id": 30403571,
+    item_id: 30403571,
     "name": "MALM",
     "category": "Chests of drawers & drawer units",
     "price": 425,
@@ -90,7 +90,7 @@ export const products = [
   },
   {
     "0": 1126,
-    "item_id": 79331865,
+    item_id: 79331865,
     "name": "LOBERGET / BLYSKÄR",
     "category": "Chairs",
     "price": 155,
@@ -104,7 +104,7 @@ export const products = [
   },
   {
     "0": 3020,
-    "item_id": 59288212,
+    item_id: 59288212,
     "name": "BEKANT",
     "category": "Tables & desks",
     "price": 6608,
@@ -118,7 +118,7 @@ export const products = [
   },
   {
     "0": 1627,
-    "item_id": 50374271,
+    item_id: 50374271,
     "name": "HEMNES",
     "category": "Chests of drawers & drawer units",
     "price": 375,
@@ -132,7 +132,7 @@ export const products = [
   },
   {
     "0": 2679,
-    "item_id": 60428344,
+    item_id: 60428344,
     "name": "FREKVENS",
     "category": "Tables & desks",
     "price": 101.5,
@@ -146,7 +146,7 @@ export const products = [
   },
   {
     "0": 1763,
-    "item_id": 59252637,
+    item_id: 59252637,
     "name": "STUVA / FRITIDS",
     "category": "Children's furniture",
     "price": 395,
@@ -160,7 +160,7 @@ export const products = [
   },
   {
     "0": 1981,
-    "item_id": 70208539,
+    item_id: 70208539,
     "name": "ÄPPLARÖ",
     "category": "Outdoor furniture",
     "price": 275,
@@ -174,7 +174,7 @@ export const products = [
   },
   {
     "0": 50,
-    "item_id": 50461230,
+    item_id: 50461230,
     "name": "SMÅGÖRA",
     "category": "Beds",
     "price": 595,
@@ -188,7 +188,7 @@ export const products = [
   },
   {
     "0": 48,
-    "item_id": 29123958,
+    item_id: 29123958,
     "name": "MINNEN",
     "category": "Beds",
     "price": 395,
@@ -202,7 +202,7 @@ export const products = [
   },
   {
     "0": 1124,
-    "item_id": 40455649,
+    item_id: 40455649,
     "name": "BINGSTA",
     "category": "Chairs",
     "price": 595,
@@ -216,7 +216,7 @@ export const products = [
   },
   {
     "0": 49,
-    "item_id": 49278341,
+    item_id: 49278341,
     "name": "BRIMNES",
     "category": "Beds",
     "price": 895,
@@ -230,7 +230,7 @@ export const products = [
   },
   {
     "0": 3019,
-    "item_id": 59222264,
+    item_id: 59222264,
     "name": "LINNMON / ALVARET",
     "category": "Tables & desks",
     "price": 555,
@@ -244,7 +244,7 @@ export const products = [
   },
   {
     "0": 3022,
-    "item_id": 79214319,
+    item_id: 79214319,
     "name": "LINNMON / GODVIN",
     "category": "Tables & desks",
     "price": 440,
@@ -258,7 +258,7 @@ export const products = [
   },
   {
     "0": 826,
-    "item_id": 30381593,
+    item_id: 30381593,
     "name": "IVAR",
     "category": "Cabinets & cupboards",
     "price": 345,
@@ -272,7 +272,7 @@ export const products = [
   },
   {
     "0": 1980,
-    "item_id": 20411425,
+    item_id: 20411425,
     "name": "STACKHOLMEN",
     "category": "Outdoor furniture",
     "price": 125,
@@ -287,7 +287,7 @@ export const products = [
   
   {
     "0": 1628,
-    "item_id": 70403593,
+    item_id: 70403593,
     "name": "MALM",
     "category": "Chests of drawers & drawer units",
     "price": 495,
@@ -301,7 +301,7 @@ export const products = [
   },
   {
     "0": 1877,
-    "item_id": 99228570,
+    item_id: 99228570,
     "name": "TROFAST",
     "category": "Children's furniture",
     "price": 195,
@@ -315,7 +315,7 @@ export const products = [
   },
   {
     "0": 52,
-    "item_id": 50468953,
+    item_id: 50468953,
     "name": "VATTVIKEN",
     "category": "Beds",
     "price": 995,
@@ -329,7 +329,7 @@ export const products = [
   },
   {
     "0": 2682,
-    "item_id": 39932699,
+    item_id: 39932699,
     "name": "LINNMON / ALEX",
     "category": "Tables & desks",
     "price": 550,
@@ -343,7 +343,7 @@ export const products = [
   },
   {
     "0": 1127,
-    "item_id": 20456956,
+    item_id: 20456956,
     "name": "STRANDMON",
     "category": "Chairs",
     "price": 995,
@@ -357,7 +357,7 @@ export const products = [
   },
   {
     "0": 3021,
-    "item_id": 79161575,
+    item_id: 79161575,
     "name": "ÖVRARYD / JANINGE",
     "category": "Tables & desks",
     "price": 1535,
@@ -371,7 +371,7 @@ export const products = [
   },
   {
     "0": 53,
-    "item_id": 69326609,
+    item_id: 69326609,
     "name": "SLÄKT",
     "category": "Beds",
     "price": 540,
@@ -385,7 +385,7 @@ export const products = [
   },
   {
     "0": 1630,
-    "item_id": 79305098,
+    item_id: 79305098,
     "name": "JONAXEL",
     "category": "Chests of drawers & drawer units",
     "price": 180,
@@ -399,7 +399,7 @@ export const products = [
   },
   {
     "0": 1123,
-    "item_id": 10209202,
+    item_id: 10209202,
     "name": "MALINDA",
     "category": "Chairs",
     "price": 25,
@@ -413,7 +413,7 @@ export const products = [
   },
   {
     "0": 3024,
-    "item_id": 89214309,
+    item_id: 89214309,
     "name": "LINNMON / ALEX",
     "category": "Tables & desks",
     "price": 420,
@@ -427,7 +427,7 @@ export const products = [
   },
   {
     "0": 3026,
-    "item_id": 60253184,
+    item_id: 60253184,
     "name": "BEKANT",
     "category": "Tables & desks",
     "price": 545,
@@ -441,7 +441,7 @@ export const products = [
   },
   {
     "0": 1125,
-    "item_id": 40472861,
+    item_id: 40472861,
     "name": "SKRUVSTA",
     "category": "Chairs",
     "price": 545,
@@ -455,7 +455,7 @@ export const products = [
   },
   {
     "0": 1121,
-    "item_id": 19189030,
+    item_id: 19189030,
     "name": "EKET",
     "category": "Cabinets & cupboards",
     "price": 656,
@@ -469,7 +469,7 @@ export const products = [
   },
   {
     "0": 275,
-    "item_id": 50263838,
+    item_id: 50263838,
     "name": "BILLY",
     "category": "Cabinets & cupboards",
     "price": 145,
@@ -483,7 +483,7 @@ export const products = [
   },
   {
     "0": 825,
-    "item_id": 30318163,
+    item_id: 30318163,
     "name": "IVAR",
     "category": "Cabinets & cupboards",
     "price": 35,
@@ -498,7 +498,7 @@ export const products = [
   
   {
     "0": 840,
-    "item_id": 10409871,
+    item_id: 10409871,
     "name": "BRIMNES",
     "category": "Cabinets & cupboards",
     "price": 476,
@@ -512,7 +512,7 @@ export const products = [
   },
   {
     "0": 3017,
-    "item_id": 30374413,
+    item_id: 30374413,
     "name": "HEMNES",
     "category": "Tables & desks",
     "price": 595,
@@ -526,7 +526,7 @@ export const products = [
   },
   {
     "0": 51,
-    "item_id": 89326463,
+    item_id: 89326463,
     "name": "PLATSA",
     "category": "Beds",
     "price": 2111,
@@ -540,7 +540,7 @@ export const products = [
   },
   {
     "0": 1982,
-    "item_id": 50208535,
+    item_id: 50208535,
     "name": "ÄPPLARÖ",
     "category": "Outdoor furniture",
     "price": 395,
@@ -555,7 +555,7 @@ export const products = [
   
   {
     "0": 277,
-    "item_id": 39318031,
+    item_id: 39318031,
     "name": "HYLLIS",
     "category": "Bookcases & shelving units",
     "price": 137,
@@ -569,7 +569,7 @@ export const products = [
   },
   {
     "0": 276,
-    "item_id": 30419973,
+    item_id: 30419973,
     "name": "JONAXEL",
     "category": "Bookcases & shelving units",
     "price": 75,
@@ -583,7 +583,7 @@ export const products = [
   },
   {
     "0": 3018,
-    "item_id": 50268812,
+    item_id: 50268812,
     "name": "BEKANT",
     "category": "Tables & desks",
     "price": 237,
@@ -597,7 +597,7 @@ export const products = [
   },
   {
     "0": 1129,
-    "item_id": 79046260,
+    item_id: 79046260,
     "name": "SNILLE",
     "category": "Chairs",
     "price": 125,
@@ -611,7 +611,7 @@ export const products = [
   },
   {
     "0": 278,
-    "item_id": 19222299,
+    item_id: 19222299,
     "name": "KALLAX",
     "category": "Bookcases & shelving units",
     "price": 450,
@@ -625,7 +625,7 @@ export const products = [
   },
   {
     "0": 3023,
-    "item_id": 79288273,
+    item_id: 79288273,
     "name": "BEKANT",
     "category": "Tables & desks",
     "price": 3664,
@@ -639,7 +639,7 @@ export const products = [
   },
   {
     "0": 1629,
-    "item_id": 50391143,
+    item_id: 50391143,
     "name": "ASKVOLL",
     "category": "Chests of drawers & drawer units",
     "price": 345,
@@ -653,7 +653,7 @@ export const products = [
   },
   {
     "0": 2681,
-    "item_id": 20260718,
+    item_id: 20260718,
     "name": "ALEX",
     "category": "Tables & desks",
     "price": 200,
@@ -667,7 +667,7 @@ export const products = [
   },
   {
     "0": 3025,
-    "item_id": 89252202,
+    item_id: 89252202,
     "name": "INGATORP / INGATORP",
     "category": "Tables & desks",
     "price": 3225,
@@ -682,7 +682,7 @@ export const products = [
  
   {
     "0": 827,
-    "item_id": 50300666,
+    item_id: 50300666,
     "name": "BRIMNES",
     "category": "Cabinets & cupboards",
     "price": 445,
@@ -696,7 +696,7 @@ export const products = [
   },
   {
     "0": 1122,
-    "item_id": 49011766,
+    item_id: 49011766,
     "name": "MELLTORP / ADDE",
     "category": "Chairs",
     "price": 179,
@@ -710,7 +710,7 @@ export const products = [
   },
   {
     "0": 828,
-    "item_id": 89279174,
+    item_id: 89279174,
     "name": "LIXHULT",
     "category": "Cabinets & cupboards",
     "price": 356,
@@ -724,7 +724,7 @@ export const products = [
   },
   {
     "0": 1983,
-    "item_id": 39251988,
+    item_id: 39251988,
     "name": "HAVSTEN",
     "category": "Outdoor furniture",
     "price": 4785,
@@ -739,7 +739,7 @@ export const products = [
   
   {
     "0": 1626,
-    "item_id": 40393661,
+    item_id: 40393661,
     "name": "KULLEN",
     "category": "Chests of drawers & drawer units",
     "price": 299,
@@ -753,7 +753,7 @@ export const products = [
   },
   {
     "0": 1762,
-    "item_id": 39252756,
+    item_id: 39252756,
     "name": "STUVA / FRITIDS",
     "category": "Children's furniture",
     "price": 425,

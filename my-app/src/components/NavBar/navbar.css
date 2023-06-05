@@ -60,6 +60,26 @@ nav {
     color: #333;
     height: 20px;
   }
+  .topBarIconItem{
+    cursor: pointer;
+    position: relative;
+    margin-right: 15px;
+  }
+
+  .topbariconbadge{
+    height: 15px;
+    width: 15px;
+    background-color: indigo;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    display: flex;
+
+}
   
   /* Responsive styles */
   
