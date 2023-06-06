@@ -1,22 +1,25 @@
 import React, { useContext, useState } from 'react';
 import './address.css'
 import { DataContext } from '../../../context/DataContext';
-import { AuthContext } from '../../../context/Authentication/AuthContext';
+
+import { useNavigate } from 'react-router-dom';
 
 export const AddressPage = () => {
-    const {state, dispatch} = useContext(DataContext);
-    const {user} = useContext(AuthContext);
-    const {encodedToken} = user
+const navigate = useNavigate();
   const [isPopupOpen, setPopupOpen] = useState(false);
-  const [addressData, setAddressData] = useState({
-    country: '',
-    name: '',
-    state: '',
-    city: '',
-    street: '',
-    zipCode: '',
-    mobile: '',
-  });
+
+  const {addressData, setAddressData} = useContext(DataContext);
+  // const [addressData, setAddressData] = useState({
+  //   country: '',
+  //   name: '',
+  //   state: '',
+  //   city: '',
+  //   street: '',
+  //   zipCode: '',
+  //   mobile: '',
+  // });
+const [showAddress, setShowAddress] = useState(false)
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,63 +29,13 @@ export const AddressPage = () => {
     }));
   };
 
-//   const handleSave = () => {
-//     // Save the address data to an object or perform desired action
-//     console.log('Address data:', addressData);
 
-//     // Close the popup
-//     setPopupOpen(false);
-//   };
 
 
   const handleSave = () => {
     console.log('Address data:', addressData);
-    const addingToaddress = async () => {
-      
-      try {
-     
-        const response = await fetch("/api/user/address" , {
-        method: 'POST',
-        body:  JSON.stringify({address : addressData}),
-        headers: {authorization : encodedToken}
-      
-      });
-      console.log(response)
-     
-      }catch(e){
-        console.error(e)
-      }
-    }
-  
-    addingToaddress();
-  
-    const getData = async () => {
-      try {
-        
-        const addressResponse = await fetch("/api/user/address", {
-          method: 'GET',
-          headers: {authorization : encodedToken}
-        
-        })
-        
-        const addressData = await addressResponse.json();
-        console.log(addressData);
-        dispatch({ type: 'FETCH_ADDRESS', payload: { address: addressData.cart } })
-        
-        console.log("from state",state.address)
-  
-        
-      
-       }
-      catch(e){
-       console.error(e)
-       }
-      };
-  
-      getData();
-  
-    console.log(state)
     setPopupOpen(false);
+    setShowAddress(true);
   }
 
   const handleCancel = () => {
@@ -100,14 +53,24 @@ export const AddressPage = () => {
 
     // Close the popup
     setPopupOpen(false);
+    setShowAddress(false);
   };
 
   const openPopup = () => {
     setPopupOpen(true);
   };
 
+  const confirmOrder = () => {
+    navigate("/checkout")
+    
+  }
+
+  
+
+  const {name, street, city, zipCode, mobile, country} = addressData
+
   return (
-    <div style={{marginTop: "100px"}}>
+    <div className='adress-container' style={{marginTop: "100px"}}>
       <h1>Address Page</h1>
       <button onClick={openPopup}>Add New Address</button>
 
@@ -162,6 +125,18 @@ export const AddressPage = () => {
           </form>
         </div>
       )}
+
+      {
+        showAddress && ( <> <div className="card">
+        <div className="card-content">
+          <h2>Your Address</h2>
+          <p>To {name}, street No: {street}, {city}, {addressData.state}, {country}, zipcode: {zipCode} Mobile No: {mobile} </p>
+        </div>
+        <button onClick={handleCancel}>Delete Address</button>
+        <button onClick={confirmOrder}>Confirm Order</button>
+      </div>
+     </>)
+      }
     </div>
   );
 };

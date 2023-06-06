@@ -5,7 +5,8 @@
     height: 100vh;
   }
   .address-card{
-    flex: 1
+    flex: 1;
+    margin : 30px;
   }
   
   .order-card {

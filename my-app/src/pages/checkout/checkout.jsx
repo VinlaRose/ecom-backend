@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 export const CheckOut = () => {
-const {state} = useContext(DataContext)
+const {state, addressData} = useContext(DataContext)
   const [discount, setDiscount] = useState('');
  
   const [showCouponModal, setShowCouponModal] = useState(false);
@@ -44,15 +44,23 @@ const {state} = useContext(DataContext)
     // Perform some action
     setIsButtonDisabled(false)
   };
-  console.log(state.cart)
+  console.log(state.cart);
+  console.log(addressData.country.length);
+  const {name, street, city, zipCode, mobile, country} = addressData
 
   return (
     <div className="checkout-page">
-        <div className="address-card">
-            <h1>Pease add your address</h1>
-            <Link to="/address" >GO TO ADDRESS</Link>
+      {
+        addressData.country.length === 0 ? (<div className="address-card">
+        <h1>Pease add your address</h1>
+        <Link to="/address" >GO TO ADDRESS</Link>
 
-        </div>
+    </div>) : (<div className="address-card">
+          <h2>Your Address</h2>
+          <p>To {name}, street No: {street}, {city}, {addressData.state}, {country}, zipcode: {zipCode} Mobile No: {mobile} </p>
+        </div>)
+      }
+        
       <div className="order-card">
         <ul>
             {

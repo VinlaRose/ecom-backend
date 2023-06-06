@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { reducer } from "./Reducer";
 import { AuthContext } from "./Authentication/AuthContext";
 
@@ -16,7 +16,19 @@ export const  initialState = {
   
 }
 export const DataProvider = ({ children }) => {
+ 
   
+  const [addressData, setAddressData] = useState({
+    country: '',
+    name: '',
+    state: '',
+    city: '',
+    street: '',
+    zipCode: '',
+    mobile: '',
+  });
+
+
 const {user} = useContext(AuthContext);
 const {encodedToken} = user;
 
@@ -161,7 +173,7 @@ const handleAddToWishlist = (id) => {
   return (
     <DataContext.Provider
       value={{
-      state, dispatch, handleAddToCart, handleAddToWishlist
+      state, dispatch, handleAddToCart, handleAddToWishlist, addressData, setAddressData
       }}
     >
       {children}

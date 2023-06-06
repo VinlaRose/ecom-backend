@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
 import { AuthContext } from "../../context/Authentication/AuthContext"
 
-export const ProductCard = ({name, price, image, category, item_id, inStock, fastDelivery, inFav, showDetailsPage, showDeleteWishList, rating}) => {
+export const ProductCard = ({name, price, image, category, item_id, inStock, fastDelivery, showDetailsPage, showDeleteWishList, rating}) => {
   const {dispatch, handleAddToCart, handleAddToWishlist} = useContext(DataContext);
   const {user} = useContext(AuthContext);
   const {encodedToken} = user;
