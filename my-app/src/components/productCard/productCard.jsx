@@ -5,7 +5,7 @@ import { DataContext } from "../../context/DataContext"
 import { AuthContext } from "../../context/Authentication/AuthContext"
 
 export const ProductCard = ({name, price, image, category, item_id, inStock, fastDelivery, inFav, showDetailsPage, showDeleteWishList}) => {
-  const {state,dispatch, handleAddToCart, handleAddToWishlist} = useContext(DataContext);
+  const {dispatch, handleAddToCart, handleAddToWishlist} = useContext(DataContext);
   const {user} = useContext(AuthContext);
   const {encodedToken} = user;
 
@@ -65,7 +65,7 @@ return (
 
         <div className="productCardIcons">
   <div className="addTocart" onClick={() => handleAddToCart(item_id)}>
-    <span class="material-symbols-outlined">add_shopping_cart</span>
+    <span className="material-symbols-outlined">add_shopping_cart</span>
   </div>
 
  

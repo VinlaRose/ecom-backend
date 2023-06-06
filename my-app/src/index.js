@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
@@ -9,10 +9,13 @@ import { AuthProvider, AuthContext } from "./context/Authentication/AuthContext"
 
 export {AuthContext}
 
+
+
+
 // Call make Server
 makeServer();
 
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
     
@@ -29,5 +32,5 @@ ReactDOM.render(
     
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+ 
 );

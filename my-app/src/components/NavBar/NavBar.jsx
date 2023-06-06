@@ -1,10 +1,10 @@
 import "./navbar.css";
 // import PersonIcon from '@mui/icons-material/Person';
 import logofurnish from "../../images/logofurnish.PNG";
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import { AuthContext } from "../../context/Authentication/AuthContext";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -35,7 +35,7 @@ export const NavBar = () => {
       <div className="navbar-middle">
         <input type="text" placeholder="Search" value={state.searchTerm}
         onChange={handleSearchTermChange} />
-        <span type="submit" class="material-symbols-outlined">
+        <span type="submit" className="material-symbols-outlined">
           search
         </span>
       </div>
@@ -100,9 +100,7 @@ person
    : (<><NavLink to="/login">Login</NavLink> </>)
 }
 
-{/* {
-  user.encodedToken ? (<p>{user.createdUser.firstName}</p>) : (<><NavLink to="/login">Login</NavLink> </>)
-} */}
+
 
 
 

@@ -13,9 +13,9 @@ export const AddressPage = () => {
     name: '',
     state: '',
     city: '',
-    streetNumber: '',
-    pincode: '',
-    phoneNumber: '',
+    street: '',
+    zipCode: '',
+    mobile: '',
   });
 
   const handleInputChange = (e) => {
@@ -43,7 +43,7 @@ export const AddressPage = () => {
      
         const response = await fetch("/api/user/address" , {
         method: 'POST',
-        body:  JSON.stringify({address : {addressData}}),
+        body:  JSON.stringify({address : addressData}),
         headers: {authorization : encodedToken}
       
       });
@@ -91,9 +91,10 @@ export const AddressPage = () => {
       name: '',
       state: '',
       city: '',
-      streetNumber: '',
-      pincode: '',
-      phoneNumber: '',
+      street: '',
+      zipCode: '',
+      mobile: '',
+       
     });
 
     // Close the popup
@@ -132,24 +133,24 @@ export const AddressPage = () => {
             <label htmlFor="city">City:</label>
             <input type="text" id="city" name="city" value={addressData.city} onChange={handleInputChange} />
 
-            <label htmlFor="streetNumber">Street Number:</label>
+            <label htmlFor="street">Street Number:</label>
             <input
               type="text"
-              id="streetNumber"
-              name="streetNumber"
-              value={addressData.streetNumber}
+              id="street"
+              name="street"
+              value={addressData.street}
               onChange={handleInputChange}
             />
 
-            <label htmlFor="pincode">Pincode:</label>
-            <input type="text" id="pincode" name="pincode" value={addressData.pincode} onChange={handleInputChange} />
+            <label htmlFor="zipCode">zipCode:</label>
+            <input type="text" id="zipCode" name="zipCode" value={addressData.zipCode} onChange={handleInputChange} />
 
-            <label htmlFor="phoneNumber">Phone Number:</label>
+            <label htmlFor="mobile">Phone Number:</label>
             <input
               type="text"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={addressData.phoneNumber}
+              id="mobile"
+              name="mobile"
+              value={addressData.mobile}
               onChange={handleInputChange}
             />
 
