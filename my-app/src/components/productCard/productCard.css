@@ -7,10 +7,38 @@
     margin: 20px;
 }
 
+.ribbon {
+  position: absolute;
+  top: 35px;
+  right: -55px;
+  background-color: #525283; /* Ribbon background color */
+  color: #fff; /* Ribbon text color */
+  font-size: 20px;
+  
+  padding: 5px 50px;
+  transform: rotate(45deg);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Overlay background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ff0000; /* Overlay text color */
+}
+
 .imageContainerProductCard {
   width: 250px;
   height: 400px;
   overflow: hidden;
+  position: relative;
+  display: inline-block;
 }
 .imageContainerProductCard img{
   width: 100%;
@@ -47,6 +75,11 @@
     text-decoration: none;
   }
   
+  .productName{
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
 
 .productDetails p {
     text-align: left;
@@ -69,6 +102,32 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.rating {
+  display: inline-block;
+}
+
+.rating-box {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background-color: #303164; /* Bright color for the rating box */
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.star-icon {
+  color: #fff; /* Bright color for the star icon */
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.rating-value {
+  color: #fff; /* Bright color for the rating text */
+  font-weight: bold;
+  font-size: 14px;
+}
+
 
 .productCardContainer p span {
     font-size: 12px;

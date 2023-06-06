@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
 import { AuthContext } from "../../context/Authentication/AuthContext"
 
-export const ProductCard = ({name, price, image, category, item_id, inStock, fastDelivery, inFav, showDetailsPage, showDeleteWishList}) => {
+export const ProductCard = ({name, price, image, category, item_id, inStock, fastDelivery, inFav, showDetailsPage, showDeleteWishList, rating}) => {
   const {dispatch, handleAddToCart, handleAddToWishlist} = useContext(DataContext);
   const {user} = useContext(AuthContext);
   const {encodedToken} = user;
@@ -44,6 +44,9 @@ return (
     <div className="productCardContainer">
         <div className="imageContainerProductCard">
         <Link to={`/product/${item_id}`}><img src={image} alt=""/></Link>
+        {fastDelivery  && <div className="ribbon">Fast Delivery </div> }
+        {inStock ? null : <div className="overlay">Out of Stock</div>}
+        
             <div className="imageOverlay">
           
           {
@@ -51,13 +54,21 @@ return (
           }
         </div>
         </div>
+
+
         <div className="productDetails">
         <p className="productName">{name}</p>
         <p className="productType">{category}</p>
         <p className="productPrice"> <span>Rs.</span> {price}</p>
-        {inStock === false && "Out of stock"}
-        <br/>
-        {fastDelivery  && "Fast delivery available"}
+        <div className="rating">
+      <div className="rating-box">
+        <span className="star-icon">&#9733;</span>
+        <span className="rating-value">{rating}</span>
+      </div>
+    </div>
+        
+        
+       
 
         </div>
        

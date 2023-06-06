@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "./Reducer";
 import { AuthContext } from "./Authentication/AuthContext";
 
@@ -18,7 +18,7 @@ export const  initialState = {
 export const DataProvider = ({ children }) => {
   
 const {user} = useContext(AuthContext);
-const {encodedToken, foundUser} = user;
+const {encodedToken} = user;
 
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(()=>{
@@ -65,9 +65,10 @@ const handleAddToCart = (id) => {
       method: 'POST',
       body:  JSON.stringify({product : {cartProduct}}),
       headers: {authorization : encodedToken}
+      
     
     });
-   
+    console.log(response)
     }catch(e){
       console.error(e)
     }

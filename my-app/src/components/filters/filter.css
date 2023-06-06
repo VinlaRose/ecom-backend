@@ -1,0 +1,22 @@
+.filter-wrapper{
+    background-color: white;
+    
+}
+
+.categories-filter ul{
+   text-align: left;
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin: 16px 0;
+  }
+
+  .filter-headings {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+  }

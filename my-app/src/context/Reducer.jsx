@@ -1,21 +1,4 @@
-import { useEffect, useReducer } from "react";
 
-
-
-const initialState = {
-    products: [],
-    filteredProducts: [],
-    categories: [],
-    cart: [],
-    wishlist: [],
-    sortOption: '',
-    rating: '',  
-    isChecked: false,
-    selectedCategories: [],
-    searchTerm: "",
-    cartLength : 0,
-    address: []
-}
 
 const sorter = (data, sortBy) => {
     if (sortBy === 'HIGH_TO_LOW') {
@@ -49,9 +32,15 @@ const rater = (data, rated, sortBy, isInstock) => {
 
     let newData;
     newData = inStocker([...data],isInstock, sortBy)
-    return newData.filter((item) => item.rating >= rated)
+    return newData.filter((item) => item.rating >= rated);
+
+    
 
 }
+
+
+
+
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -79,7 +68,7 @@ export const reducer = (state, action) => {
         case 'FETCH_ADDRESS':
         return{
           ...state,
-          address: action.payload.address
+          address: action.payload.address 
         };
       
         
@@ -92,7 +81,7 @@ export const reducer = (state, action) => {
     case 'IN_STOCK': 
       return {
         ...state,
-        filteredProducts: inStocker([...state.products], action.payload, state.sortOption),
+        filteredProducts: inStocker([...state.filteredProducts], action.payload, state.sortOption),
         isChecked: !state.isChecked
         
       };
@@ -108,11 +97,11 @@ case 'CATEGORIZATION' :
     
     const selectedCategories = [...state.selectedCategories];
     if (selectedCategories.includes(action.payload)) {
-      // Category is already selected, so remove it
+      
       const index = selectedCategories.indexOf(action.payload);
       selectedCategories.splice(index, 1);
     } else {
-      // Category is not selected, so add it
+     
       selectedCategories.push(action.payload);
     }
 
@@ -124,9 +113,16 @@ case 'CATEGORIZATION' :
         filterCategorizedData = state.products.filter(product =>
             selectedCategories.includes(product.category))
     }
+
+    
 return { ...state,
          selectedCategories ,
-        filteredProducts : filterCategorizedData}
+        filteredProducts : rater(filterCategorizedData, state.rating, state.sortOption, state.isChecked )}
+
+
+
+
+
 
 case 'SEARCH' :
 console.log(action.payload);

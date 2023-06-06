@@ -22,8 +22,9 @@
 }
 
 .exploreLeft{
-    background-color: #2a9d8f;
+   
     flex: 3;
+    
 }
 
 .exploreRight{
@@ -47,10 +48,10 @@
 }
 
 .exploreLeft .filters{
-    background-color: rgb(209, 247, 134);
+   
     margin: 20px;
-    height: 100%;
-    border-radius: 5px;
+    position: sticky;top: 0;
+   
 }
 .filters-mobile{
     display: none;

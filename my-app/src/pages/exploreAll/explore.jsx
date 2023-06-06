@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useState,  useEffect  } from 'react';
+import { useState  } from 'react';
 import CategoryReel from "../../components/categoryReel/categoryReel"
 import { ProductCard } from "../../components/productCard/productCard"
 import "./explore.css"
@@ -50,8 +50,8 @@ export const Explore = () => {
                 <div className="exploreRight">
                 <ul>
         {
-          filteredProducts.map(({item_id, name, image, category, price, inStock, fastDelivery, inFav}) => (<li key={item_id}>
-            <ProductCard item_id={item_id} name={name} image={image} category={category} price={price} inStock={inStock} fastDelivery={fastDelivery} inFav={inFav} showDetailsPage={true}/>
+          filteredProducts.map(({item_id, name, image, category, price, inStock, fastDelivery, inFav, rating}) => (<li key={item_id}>
+            <ProductCard item_id={item_id} name={name} image={image} category={category} price={price} inStock={inStock} fastDelivery={fastDelivery} inFav={inFav} rating= {rating} showDetailsPage={true}/>
           </li >))
         }
         </ul>
