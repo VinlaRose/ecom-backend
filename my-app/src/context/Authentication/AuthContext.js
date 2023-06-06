@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   const navigate = useNavigate();
   const location = useLocation();
 

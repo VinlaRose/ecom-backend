@@ -47,6 +47,7 @@ export const AddressPage = () => {
         headers: {authorization : encodedToken}
       
       });
+      console.log(response)
      
       }catch(e){
         console.error(e)

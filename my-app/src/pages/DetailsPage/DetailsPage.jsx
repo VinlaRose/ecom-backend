@@ -1,15 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom"
 import { DataContext } from "../../context/DataContext";
-import { ProductDetails } from "../../components/productDetailsCard/ProductDetails";
-import { AuthContext } from "../../context/Authentication/AuthContext";
+
 import { ProductCard } from "../../components/productCard/productCard";
 
 
 export const DetailsPage = () => {
-  const {user} = useContext(AuthContext);
+
   const {state} = useContext(DataContext)
-  const {encodedToken} = user;
+  
   console.log(state)
 
     const {productId} = useParams(); 

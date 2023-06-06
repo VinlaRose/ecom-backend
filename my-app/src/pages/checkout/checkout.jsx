@@ -42,6 +42,7 @@ const {state} = useContext(DataContext)
 
   const handleButtonClick = () => {
     // Perform some action
+    setIsButtonDisabled(false)
   };
   console.log(state.cart)
 

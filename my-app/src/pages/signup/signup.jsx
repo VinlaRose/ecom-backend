@@ -1,10 +1,10 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/Authentication/AuthContext"
 import '../login/login.css';
 
 export const SignUp = () => {
-  const { user, handleSubmit, handleInputChange, handleLogin, logoutHandler, creds, handleGuestLogin,
+  const { 
     handleSignUp, handleSignUpSubmit, handleSinUpInputChange, signUpcreds} = useContext(
     AuthContext
   );

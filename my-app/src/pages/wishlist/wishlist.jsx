@@ -1,15 +1,13 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import "./wishlist.css"
-import { AuthContext } from "../../context/Authentication/AuthContext"
 import { DataContext } from "../../context/DataContext"
-import { Link } from "react-router-dom"
+
 import { ProductCard } from "../../components/productCard/productCard"
 
 
 export const Wishlist = () => {
-const {state,dispatch} = useContext(DataContext)
-const {user} = useContext(AuthContext);
-const{encodedToken} = user;
+const {state} = useContext(DataContext)
+
 
 
 

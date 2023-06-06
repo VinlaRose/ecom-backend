@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, {useState } from "react";
 import "./categoryReel.css";
 import  { categories } from "../../backend/db/categories";
-import { DataContext } from "../../context/DataContext";
+
 
 const CategoryReel = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -18,8 +18,7 @@ const CategoryReel = () => {
   const showLeftArrow = scrollPosition < 0;
   const showRightArrow = scrollPosition  <= 100 && scrollPosition  > -90 ;
 
-  const {state, dispatch} = useContext(DataContext)
-
+  
   return (
 
     <div className="main">
