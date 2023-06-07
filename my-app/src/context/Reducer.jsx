@@ -139,7 +139,7 @@ case 'CATEGORIZATION' :
     
 return { ...state,
          selectedCategories ,
-        filteredProducts : rater(filterCategorizedData, state.rating, state.sortOption, state.isChecked )}
+        filteredProducts : rater(filterCategorizedData, state.rating, state.priceRange, state.sortOption, state.isChecked )}
 
 
 
