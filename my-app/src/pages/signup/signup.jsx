@@ -51,7 +51,7 @@ export const SignUp = () => {
             onChange={handleSinUpInputChange}
           />
         </div>
-        <button type="submit" >submit</button>
+        {/* <button type="submit" >submit</button> */}
       </form>
       <div className="login-buttons">
         <button onClick={handleSignUp}>Sign in</button>

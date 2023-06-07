@@ -3,6 +3,8 @@
     text-align: center;
     width: 300px;
     margin: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 30px;
     
   }
   
@@ -22,20 +24,24 @@
   }
   
   .login-form input[type="email"],
-  .login-form input[type="password"] {
-    width: 300px;
+  .login-form input[type="password"],
+  .login-form input[type="firstName"],
+  .login-form input[type="lastName"] {
+    width: 250px;
     padding: 8px;
     margin-bottom: 10px;
   }
   
   .login-buttons {
+    width: 300px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    margin: auto;
   }
   
   .login-buttons button {
-    margin-right: 10px;
+    margin: 10px;
   }
   
   .login-buttons p {

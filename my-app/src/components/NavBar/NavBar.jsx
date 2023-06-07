@@ -4,7 +4,7 @@ import logofurnish from "../../images/logofurnish.PNG";
 import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import { AuthContext } from "../../context/Authentication/AuthContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
 
@@ -16,12 +16,13 @@ export const NavBar = () => {
  
   const {user, logoutHandler} = useContext(AuthContext);
   
- 
+ const navigate = useNavigate()
 
 
   const handleSearchTermChange = event => {
     const searchTerm = event.target.value;
     dispatch({ type: "SEARCH", payload: searchTerm });
+    navigate("/explore")
     
   };
     return (
@@ -86,6 +87,8 @@ export const NavBar = () => {
         <NavLink to="/explore" className="icon"><span className="material-symbols-outlined">
 shopping_bag
 </span></NavLink>
+
+
         <NavLink to="/profile" className="icon"><span className="material-symbols-outlined">
 person
 </span></NavLink>
@@ -93,11 +96,11 @@ person
 {
   user.encodedToken ? (<>
   {
-  user.foundUser ? <p>{user.foundUser.firstName}</p> : <p>{user.createdUser.firstName}</p>
+  user.foundUser ? <p  className="icon" >{user.foundUser.firstName}</p> : <p  className="icon">{user.createdUser.firstName}</p>
   }
-  <button onClick={logoutHandler}>Logout</button>
+  <button  className="icon-button" onClick={logoutHandler}>Logout</button>
   </>)
-   : (<><NavLink to="/login">Login</NavLink> </>)
+   : (<><NavLink  className="icon" to="/login">Login</NavLink> </>)
 }
 
 

@@ -9,15 +9,7 @@ const navigate = useNavigate();
   const [isPopupOpen, setPopupOpen] = useState(false);
 
   const {addressData, setAddressData} = useContext(DataContext);
-  // const [addressData, setAddressData] = useState({
-  //   country: '',
-  //   name: '',
-  //   state: '',
-  //   city: '',
-  //   street: '',
-  //   zipCode: '',
-  //   mobile: '',
-  // });
+
 const [showAddress, setShowAddress] = useState(false)
   
 
