@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './CheckoutPage.css';
 import { DataContext } from '../../context/DataContext';
 import { Link } from 'react-router-dom';
@@ -39,13 +39,24 @@ const {state, addressData} = useContext(DataContext)
 
 
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+useEffect(() => {
+  if(addressData.country.length !== 0){
+    setIsButtonDisabled(false)
+  }
 
-  
+},[]);
+
+const [showPopup, setShowPopup] = useState(false);
+ 
 
   const handleButtonClick = () => {
     // Perform some action
-    setIsButtonDisabled(false)
+    console.log("butoon is working");
+    setShowPopup(true)
   };
+  const closePopup = () => {
+    setShowPopup(false)
+  }
   console.log(state.cart);
   console.log(addressData.country.length);
   const {name, street, city, zipCode, mobile, country} = addressData
@@ -129,6 +140,15 @@ const {state, addressData} = useContext(DataContext)
                     please give your address first
             </div>
         }
+        {showPopup && (
+        <div className="popup">
+          <h2>Order Placed Successfully</h2>
+          <img src="https://cdn.pixabay.com/photo/2016/09/30/17/29/shopping-1705800_640.png" alt=""/>
+          <div>
+          <button onClick={closePopup}>Close</button></div>
+         
+        </div>
+      )}
        
 
         </div>

@@ -21,6 +21,13 @@ export const Filters = () => {
     const handleCategoryChange = (event) => {
       dispatch({ type: "CATEGORIZATION", payload: event.target.value });
     };
+
+    const handlePriceRange = (event) => {
+      console.log(state.priceRange);
+
+      console.log(event.target.value);
+      dispatch({ type: "PRIZE_RANGE", payload: event.target.value })
+    };
   
     return (
       <div className='filter-wrapper'>
@@ -55,6 +62,17 @@ export const Filters = () => {
               onChange={handleSortOptionChange}
             />{" "}
             LOW TO HIGH
+          </div>
+          <div className="price-range">
+          <input
+            type="range"
+            name="priceRange"
+            className="slider"
+            min="25"
+            max="6600"
+            value={state.priceRange}
+            onChange={handlePriceRange}
+          />
           </div>
         </div>
         <div className="section-divider"></div>

@@ -13,6 +13,7 @@ export const  initialState = {
   rating: '',  
   isChecked: false,
   selectedCategories: [],
+  priceRange: 6600,
   
 }
 export const DataProvider = ({ children }) => {

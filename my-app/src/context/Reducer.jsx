@@ -28,15 +28,31 @@ const inStocker = (data,  shouldFilter, sortBy) => {
 
 }
 
-const rater = (data, rated, sortBy, isInstock) => {
+const priceRanger = (data, range,  sortBy, isInstock) => {
+
+  let newData;
+  newData = inStocker(data,isInstock, sortBy )
+
+  return  newData.filter((item) => item.price < Number(range))
+
+ 
+
+  
+
+}
+
+const rater = (data,rated, priceRange, sortBy, isInstock) => {
+
 
     let newData;
-    newData = inStocker([...data],isInstock, sortBy)
+    newData = priceRanger([...data],priceRange,sortBy, isInstock)
     return newData.filter((item) => item.rating >= rated);
 
     
 
 }
+
+
 
 
 
@@ -78,6 +94,12 @@ export const reducer = (state, action) => {
           filteredProducts: sorter([...state.filteredProducts], action.payload),
           sortOption: action.payload,
         };
+        case 'PRIZE_RANGE':
+        return {
+          ...state,
+          filteredProducts: priceRanger([...state.filteredProducts], action.payload, state.sortOption, state.isChecked ),
+          priceRange: action.payload,
+        };
     case 'IN_STOCK': 
       return {
         ...state,
@@ -90,7 +112,7 @@ case 'RATING' :
     return{
         ...state,
         rating: action.payload,
-        filteredProducts: rater([...state.products], action.payload, state.sortOption, state.isChecked)
+        filteredProducts: rater([...state.products], action.payload, state.priceRange, state.sortOption, state.isChecked)
     }
  
 case 'CATEGORIZATION' :
@@ -141,6 +163,7 @@ let filteredSearch = state.products.filter((item) => item.category.toLowerCase()
         isChecked: false,
         rating: null, 
         selectedCategories: [],
+        priceRange: 6600,
             
         }
     default:
