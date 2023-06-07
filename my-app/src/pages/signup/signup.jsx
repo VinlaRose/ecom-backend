@@ -1,16 +1,33 @@
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/Authentication/AuthContext"
 import '../login/login.css';
 
 export const SignUp = () => {
   const { 
-    handleSignUp, handleSignUpSubmit, handleSinUpInputChange, signUpcreds} = useContext(
+   user, handleSignUp, handleSignUpSubmit, handleSinUpInputChange, signUpcreds} = useContext(
     AuthContext
   );
-
+const navigate = useNavigate();
   return (
     <div style={{marginTop: "200px"}}>
+             {
+            user.encodedToken && (
+              <>
+                <div >
+           
+            Logged in as: {
+  user.foundUser ? <span>{user.foundUser.firstName}</span> : <span>{user.createdUser.firstName}</span>
+  }
+
+        </div>
+        <div>
+          <button onClick={() => navigate("/explore")}>Explore Products</button>
+        </div>
+        </>
+
+            )
+        }
       <div className="login-container">
       <h2>SignUp</h2>
       <form className="login-form" onSubmit={handleSignUpSubmit}>

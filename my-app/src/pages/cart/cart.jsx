@@ -104,18 +104,17 @@ const deleteProduct = async (productId) => {
 
     
 
-const totalPrice = state.cart.reduce((accumulator, currentItem) => {
+const totalPrice = state.cart?.reduce((accumulator, currentItem) => {
     const price = currentItem.cartProduct.price;
     const quantity = currentItem.qty;
     return accumulator + price * quantity;
   }, 0);
   
-  console.log(totalPrice); 
+  
 
-  const mrp = totalPrice +45;
-  const cartLength = state.cart.length
-  console.log(cartLength)
-
+ 
+  const cartLength = state.cart?.length
+  
    
     return(
         <div className="cartContainer">
@@ -135,7 +134,7 @@ const totalPrice = state.cart.reduce((accumulator, currentItem) => {
                     
                     <ul>
                         {
-                            state.cart.map(({cartProduct, qty}) => (<li key={cartProduct.item_id}>
+                            state.cart?.map(({cartProduct, qty}) => (<li key={cartProduct.item_id}>
                                 <div className="cart-product-card">
                             <div className="image-container-cart">
                                 <img src={cartProduct.image} alt=""/>
@@ -171,7 +170,7 @@ const totalPrice = state.cart.reduce((accumulator, currentItem) => {
         
                         <div className="products-in-bill">
                         {
-                            state.cart.map(({cartProduct, qty}) => (<li key={cartProduct.item_id}>
+                            state.cart?.map(({cartProduct, qty}) => (<li key={cartProduct.item_id}>
                                 <div>
                          
                             <div className="each-product-in-bill" >
@@ -189,11 +188,9 @@ const totalPrice = state.cart.reduce((accumulator, currentItem) => {
                             </li>) )
                         }
                         </div>
+                       
                         <div>
-                                DELIVERY FEE: 45 
-                            </div>
-                        <div>
-                                Total: Rs.{mrp}
+                                Total: Rs.{totalPrice}
                             </div>
                             <div>
                                 <Link to="/checkout">Place Order</Link>

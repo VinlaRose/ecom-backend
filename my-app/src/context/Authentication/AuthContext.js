@@ -74,6 +74,8 @@ export function AuthProvider({ children }) {
 
     }catch(e){
       console.error(e)
+      
+      
     }
   }
 
@@ -126,7 +128,9 @@ export function AuthProvider({ children }) {
    
 
     }catch(e){
-      console.error(e)
+      console.error(e);
+      const errormsg = e.errors;
+      console.log(errormsg)
     }
   }
 

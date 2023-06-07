@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { reducer } from "./Reducer";
 import { AuthContext } from "./Authentication/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 
 export const DataContext = createContext();
 
@@ -17,6 +19,9 @@ export const  initialState = {
   
 }
 export const DataProvider = ({ children }) => {
+
+  const navigate = useNavigate();
+
  
   
   const [addressData, setAddressData] = useState({
@@ -70,49 +75,62 @@ const {encodedToken} = user;
 
 
 const handleAddToCart = (id) => {
-  const addingToCart = async (id) => {
-    const cartProduct = state.products.find((item) => item.item_id === Number(id));
-    try {
-   
-      const response = await fetch("/api/user/cart" , {
-      method: 'POST',
-      body:  JSON.stringify({product : {cartProduct}}),
-      headers: {authorization : encodedToken}
+
+  if(encodedToken){
+
+    const addingToCart = async (id) => {
+      const cartProduct = state.products.find((item) => item.item_id === Number(id));
+      try {
+     
+        const response = await fetch("/api/user/cart" , {
+        method: 'POST',
+        body:  JSON.stringify({product : {cartProduct}}),
+        headers: {authorization : encodedToken}
+        
       
-    
-    });
-    console.log(response)
-    }catch(e){
-      console.error(e)
+      });
+      console.log(response)
+      }catch(e){
+        console.error(e)
+      }
     }
+  
+    addingToCart(id);
+  
+    const getData = async () => {
+      try {
+        
+        const cartResponse = await fetch("/api/user/cart", {
+          method: 'GET',
+          headers: {authorization : encodedToken}
+        
+        })
+        
+        const cartData = await cartResponse.json();
+        console.log(cartData);
+        dispatch({ type: 'FETCH_CART', payload: { cart: cartData.cart } })
+        
+        console.log(state.cart)
+  
+        
+      
+       }
+      catch(e){
+       console.error(e)
+       }
+      };
+  
+      getData();
+
+  }else{
+    console.log("login please");
+    navigate("/login")
+     
+
   }
 
-  addingToCart(id);
 
-  const getData = async () => {
-    try {
-      
-      const cartResponse = await fetch("/api/user/cart", {
-        method: 'GET',
-        headers: {authorization : encodedToken}
-      
-      })
-      
-      const cartData = await cartResponse.json();
-      console.log(cartData);
-      dispatch({ type: 'FETCH_CART', payload: { cart: cartData.cart } })
-      
-      console.log(state.cart)
-
-      
-    
-     }
-    catch(e){
-     console.error(e)
-     }
-    };
-
-    getData();
+ 
 
   console.log(state)
 
@@ -123,6 +141,9 @@ const handleAddToCart = (id) => {
 
 
 const handleAddToWishlist = (id) => {
+
+if(encodedToken){
+
   const addingToWishlist = async (id) => {
     const wishListProduct = state.products.find((item) => item.item_id === Number(id));
     try {
@@ -167,6 +188,13 @@ const handleAddToWishlist = (id) => {
     };
 
     getWishlistData();
+
+}else{
+  navigate("/login")
+}
+
+
+
 }
 
 

@@ -1,15 +1,35 @@
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/Authentication/AuthContext"
 import './login.css';
 
 export const LoginPage = () => {
-  const {  handleSubmit, handleInputChange, handleLogin, creds, handleGuestLogin } = useContext(
+  const { user, handleSubmit, handleInputChange, handleLogin, creds, handleGuestLogin } = useContext(
     AuthContext
   );
 
+  const navigate = useNavigate()
+
   return (
     <div style={{marginTop: "200px"}}>
+       {
+            user.encodedToken && (
+              <>
+                <div >
+           
+            Logged in as: {
+  user.foundUser ? <span>{user.foundUser.firstName}</span> : <span>{user.createdUser.firstName}</span>
+  }
+
+        </div>
+        <div>
+          <button onClick={() => navigate("/explore")}>Explore Products</button>
+        </div>
+        </>
+
+            )
+        }
+
       <div className="login-container">
       <h2>Login</h2>
       <form className="login-form" onSubmit={handleSubmit}>
@@ -42,6 +62,7 @@ export const LoginPage = () => {
         New User? <Link to="/signup">Sign up</Link>
       </p>
     </div>
+   
 
     </div>
     
