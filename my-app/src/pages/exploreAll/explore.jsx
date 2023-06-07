@@ -11,7 +11,7 @@ import { Filters } from "../../components/filters/Filter";
 
 
 export const Explore = () => {
-    const {state} = useContext(DataContext);
+    const {state, showAlert, showWishlistAlert} = useContext(DataContext);
     const { filteredProducts} = state;
 
     const[showFilter, setShowFilter] = useState(false)
@@ -21,6 +21,9 @@ export const Explore = () => {
    
     return(
         <div className="exploreContainer">
+            {showAlert && <div className="alert">Product added to cart!</div>}
+            {showWishlistAlert && <div className="alert">Product added to Wishlist!</div>}
+            
             <img className="exploreFrontImage" src="https://cdn.pixabay.com/photo/2017/08/07/16/39/living-room-2605530_960_720.jpg" alt =" " />
 
             <div className="categoryReelContainer">

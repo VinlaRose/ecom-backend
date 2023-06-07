@@ -84,13 +84,14 @@ return (
     <span className="material-symbols-outlined">heart_plus</span>
   </div>
 
-  {
-    showDeleteWishList && <button onClick={() =>  handleRemoveFromWishlist(item_id)}>DELETE from Wishlist  </button>
-  }
+ 
 
    
   
 </div>
+{
+    showDeleteWishList && <div><button onClick={() =>  handleRemoveFromWishlist(item_id)}>DELETE from Wishlist  </button></div>
+  }
 
     </div>
 )

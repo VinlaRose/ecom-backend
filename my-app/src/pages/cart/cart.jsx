@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 
 export const Cart = () => {
-const {state,dispatch} = useContext(DataContext)
+const {state,dispatch, handleAddToWishlist, showWishlistAlert} = useContext(DataContext)
 const {user} = useContext(AuthContext);
 const{encodedToken} = user;
 
@@ -118,6 +118,7 @@ const totalPrice = state.cart?.reduce((accumulator, currentItem) => {
    
     return(
         <div className="cartContainer">
+            {showWishlistAlert && <div className="alert">Product added to Wishlist!</div>}
         <img src="https://cdn.pixabay.com/photo/2017/09/04/18/51/ikea-2714998_1280.jpg" alt=""/>
        <div className="cartHeading"><h1>
         CART({cartLength})</h1></div>
@@ -149,6 +150,9 @@ const totalPrice = state.cart?.reduce((accumulator, currentItem) => {
                                 <button onClick={() => increaseQuantity(cartProduct.item_id)}>+</button>
                                 <div>
                                     <button onClick={() => deleteProduct(cartProduct.item_id)} >Delete from cart</button>
+                                </div>
+                                <div>
+                                    <button onClick={() => handleAddToWishlist(cartProduct.item_id)} >Add to Wishlist</button>
                                 </div>
                             </div>
         

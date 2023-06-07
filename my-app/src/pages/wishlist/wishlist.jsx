@@ -47,9 +47,9 @@ const {state} = useContext(DataContext)
           state.wishlist?.length === 0 || state.wishlist?.length === undefined ? <div>Empty wishlist..</div> :  <div className="wishlist-products-container">
             <ul>
             {
-              state.wishlist.map(({name, item_id, image, price, category, inStock, fastDelivery}) => (
+              state.wishlist.map(({name, item_id, image, price, category, inStock, fastDelivery, rating}) => (
                 <li key={item_id}>
-                  <ProductCard item_id={item_id} name={name} image={image} category={category} price={price} inStock={inStock} fastDelivery={fastDelivery} showDeleteWishList={true}/>
+                  <ProductCard item_id={item_id} name={name} image={image} category={category} price={price} inStock={inStock} fastDelivery={fastDelivery} rating={rating} showDeleteWishList={true}/>
                 </li>
               ))
             }

@@ -7,7 +7,7 @@ import { ProductCard } from "../../components/productCard/productCard";
 
 export const DetailsPage = () => {
 
-  const {state} = useContext(DataContext)
+  const {state, showAlert, showWishlistAlert} = useContext(DataContext)
   
   console.log(state)
 
@@ -20,7 +20,8 @@ export const DetailsPage = () => {
     return(
         <div style ={{marginTop : "100px"}} className="detail-page-container">
 
-        
+{showAlert && <div className="alert">Product added to cart!</div>}
+            {showWishlistAlert && <div className="alert">Product added to Wishlist!</div>}
         
         <ul>
         {

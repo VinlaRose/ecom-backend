@@ -73,6 +73,8 @@ const {encodedToken} = user;
       
 },[encodedToken])
 
+const [showAlert, setShowAlert] = useState(false);
+
 
 const handleAddToCart = (id) => {
 
@@ -122,6 +124,11 @@ const handleAddToCart = (id) => {
   
       getData();
 
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 2000);
+
   }else{
     console.log("login please");
     navigate("/login")
@@ -138,7 +145,7 @@ const handleAddToCart = (id) => {
 
 
 
-
+const [showWishlistAlert, setShowWishlistAlert] = useState(false)
 
 const handleAddToWishlist = (id) => {
 
@@ -189,6 +196,11 @@ if(encodedToken){
 
     getWishlistData();
 
+    setShowWishlistAlert(true);
+      setTimeout(() => {
+        setShowWishlistAlert(false);
+      }, 2000);
+
 }else{
   navigate("/login")
 }
@@ -202,7 +214,7 @@ if(encodedToken){
   return (
     <DataContext.Provider
       value={{
-      state, dispatch, handleAddToCart, handleAddToWishlist, addressData, setAddressData
+      state, dispatch, handleAddToCart, handleAddToWishlist, addressData, setAddressData, showAlert, showWishlistAlert
       }}
     >
       {children}

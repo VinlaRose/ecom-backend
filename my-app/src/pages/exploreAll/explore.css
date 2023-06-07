@@ -56,6 +56,17 @@
 .filters-mobile{
     display: none;
 }
+.alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4b2b85;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 999;
+  }
+  
 
 @media (max-width: 768px){
     .exploreMain{
