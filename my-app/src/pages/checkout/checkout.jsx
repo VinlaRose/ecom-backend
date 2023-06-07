@@ -44,7 +44,7 @@ useEffect(() => {
     setIsButtonDisabled(false)
   }
 
-},[]);
+},[addressData.country.length]);
 
 const [showPopup, setShowPopup] = useState(false);
  
